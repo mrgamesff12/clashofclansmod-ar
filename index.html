@@ -4,12 +4,8 @@
   <meta charset="UTF-8" />
   <title>افتح الرابط</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Tahoma', sans-serif;
@@ -20,19 +16,11 @@
       text-align: center;
       padding: 50px 10px;
     }
-
     @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
     h2 {
       font-size: 24px;
       margin-bottom: 20px;
@@ -40,7 +28,6 @@
       text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
       animation: fadeInDown 1s ease forwards;
     }
-
     .progress-container {
       width: 100%;
       max-width: 500px;
@@ -51,7 +38,6 @@
       overflow: hidden;
       box-shadow: 0 0 10px #0ff6;
     }
-
     .progress-bar {
       height: 100%;
       width: 0%;
@@ -59,7 +45,6 @@
       transition: width 0.5s ease;
       border-radius: 10px;
     }
-
     .step {
       display: flex;
       align-items: center;
@@ -77,27 +62,20 @@
       transform: translateY(20px);
       transition: 0.5s ease;
     }
-
     .step.active {
       opacity: 1;
       pointer-events: auto;
       animation: fadeInUp 0.8s ease forwards;
     }
-
     .step.completed {
       border-color: lime;
       background-color: #141414dd;
     }
-
     .step span {
       text-align: right;
       font-size: 16px;
     }
-
-    .check {
-      font-size: 20px;
-    }
-
+    .check { font-size: 20px; }
     a {
       color: white;
       text-decoration: none;
@@ -106,7 +84,6 @@
       width: 100%;
       justify-content: space-between;
     }
-
     .loading {
       display: inline-block;
       width: 16px;
@@ -116,23 +93,16 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
-
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-
     .final-section {
       margin-top: 30px;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
     }
-
     .final-message {
       font-size: 18px;
       margin: 0 auto 6px auto;
@@ -142,7 +112,6 @@
       width: 100%;
       text-align: center;
     }
-
     .final-buttons {
       background: #111c;
       border-radius: 12px;
@@ -153,7 +122,6 @@
       margin: auto;
       box-shadow: 0 0 12px #0ff4;
     }
-
     .final-buttons a {
       display: block;
       background-color: #555;
@@ -169,56 +137,30 @@
       box-shadow: 0 0 6px #000;
       text-align: center;
     }
-
     .final-buttons a.active {
       background-color: #0c0;
       pointer-events: auto;
       opacity: 1;
       box-shadow: 0 0 15px #0f0;
     }
-
-    .final-buttons a:hover {
-      transform: scale(1.03);
-    }
-
+    .final-buttons a:hover { transform: scale(1.03); }
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     @media (max-width: 480px) {
-      h2 {
-        font-size: 20px;
-      }
-      .step span {
-        font-size: 14px;
-      }
-      .final-message {
-        font-size: 16px;
-      }
+      h2 { font-size: 20px; }
+      .step span { font-size: 14px; }
+      .final-message { font-size: 16px; }
     }
   </style>
 </head>
 <body>
   <h2>نفذ هذه الخطوات أولاً لكي يتم فتح لك روابط التحميل</h2>
-
   <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
@@ -247,26 +189,21 @@
   <div class="final-section">
     <div id="finalMessage" class="final-message">❌ نفّذ الخطوات أولاً لكي يتم فتح روابط التحميل</div>
     <div class="final-buttons">
-      <a
-        id="btnDownload"
-        href="#"
-        onclick="goToDownload(); return false;"
-        >🔒 اضغط هنا لتحميل لعبة كلاش اوف كلانس مهكرة</a
-      >
+      <a id="btnDownload" href="#" onclick="goToDownload(); return false;">🔒 اضغط هنا لتحميل لعبة كلاش اوف كلانس مهكرة</a>
     </div>
   </div>
 
   <script>
-    const STEP_EXPIRY_MS = 24 * 60 * 60 * 1000; // يوم كامل
+    const STEP_EXPIRY_MS = 24 * 60 * 60 * 1000;
     const step3Links = [
-      "https://youtu.be/CYzCkO2faCI?si=dxjNGLWa1ZTBoUuO",
-      "https://youtu.be/FvKaH1O5p2A?si=fzpm_APuoR0k85iL",
-      "https://youtu.be/HT505S5e6OA?si=qSCthgAp7Di4MtFV",
-      "https://youtu.be/2NUIqCo9GsA?si=5B9x7PGkoVw49qqE",
-      "https://youtu.be/tRfwoy1EnTA?si=R2KtVKde3LmHgYRW",
+      "https://youtu.be/5ZGLx8d_0tA?si=7tl8e-W1kvir6NKT"
+
     ];
 
+    const videoId = "v1"; // ← غيّره حسب الفيديو المعروض في هذا الموقع
+    const step3StorageKey = `step3State_${videoId}`;
     const savedState = JSON.parse(localStorage.getItem("stepsState") || "{}");
+
     const isStateExpired = () => {
       if (!savedState.timestamp) return true;
       return Date.now() - savedState.timestamp > STEP_EXPIRY_MS;
@@ -274,26 +211,33 @@
 
     window.onload = () => {
       if (!isStateExpired()) {
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 2; i++) {
           if (savedState["step" + i]) {
             document.getElementById("step" + i).classList.add("completed");
             document.getElementById("check" + i).innerText = "✅";
             const nextStep = document.getElementById("step" + (i + 1));
-            if (nextStep) {
-              nextStep.classList.add("active");
-            }
-          } else {
-            break;
-          }
+            if (nextStep) nextStep.classList.add("active");
+          } else break;
         }
+
+        const step3Data = JSON.parse(localStorage.getItem(step3StorageKey) || "{}");
+        if (step3Data.completed) {
+          document.getElementById("step3").classList.add("completed");
+          document.getElementById("check3").innerText = "✅";
+        } else if (savedState.step2) {
+          document.getElementById("step3").classList.add("active");
+        }
+
         unlockButtons();
         updateProgressBar();
       } else {
         localStorage.removeItem("stepsState");
+        localStorage.removeItem(step3StorageKey);
       }
     };
 
     function saveStepState(step) {
+      if (step === 3) return;
       const current = JSON.parse(localStorage.getItem("stepsState") || "{}");
       current["step" + step] = true;
       current.timestamp = Date.now();
@@ -308,9 +252,7 @@
         document.getElementById("step" + step).classList.add("completed");
         checkSpan.innerText = "✅";
         const nextStep = document.getElementById("step" + (step + 1));
-        if (nextStep) {
-          nextStep.classList.add("active");
-        }
+        if (nextStep) nextStep.classList.add("active");
         saveStepState(step);
         unlockButtons();
         updateProgressBar();
@@ -326,24 +268,23 @@
       setTimeout(() => {
         document.getElementById("step" + step).classList.add("completed");
         checkSpan.innerText = "✅";
-        saveStepState(step);
+        const data = { completed: true, timestamp: Date.now() };
+        localStorage.setItem(step3StorageKey, JSON.stringify(data));
         unlockButtons();
         updateProgressBar();
       }, 10000);
     }
 
     function unlockButtons() {
-      const allCompleted = [...Array(3).keys()].every((i) =>
-        document.getElementById("step" + (i + 1)).classList.contains("completed")
-      );
-      if (allCompleted) {
-        document.getElementById("finalMessage").innerText =
-          "✅ تم تنفيذ كل الخطوات بنجاح";
-        document.getElementById("finalMessage").style.color = "lime";
+      const completed1 = document.getElementById("step1").classList.contains("completed");
+      const completed2 = document.getElementById("step2").classList.contains("completed");
+      const completed3 = document.getElementById("step3").classList.contains("completed");
 
+      if (completed1 && completed2 && completed3) {
+        document.getElementById("finalMessage").innerText = "✅ تم تنفيذ كل الخطوات بنجاح";
+        document.getElementById("finalMessage").style.color = "lime";
         const btnDownload = document.getElementById("btnDownload");
         btnDownload.classList.add("active");
-
         btnDownload.innerText = "🔓 اضغط هنا لتحميل لعبة كلاش اوف كلانس مهكرة";
       }
     }
@@ -351,12 +292,10 @@
     function updateProgressBar() {
       let completedSteps = 0;
       for (let i = 1; i <= 3; i++) {
-        if (document.getElementById("step" + i).classList.contains("completed")) {
-          completedSteps++;
-        }
+        if (document.getElementById("step" + i).classList.contains("completed")) completedSteps++;
       }
-      const progressPercent = (completedSteps / 3) * 100;
-      document.getElementById("progressBar").style.width = progressPercent + "%";
+      const percent = (completedSteps / 3) * 100;
+      document.getElementById("progressBar").style.width = percent + "%";
     }
 
     function goToDownload() {
